@@ -18,6 +18,16 @@ public class PaymentController {
     @Value("${server.port}")
     private String serverPort;
 
+    @GetMapping("/payment/get/{id}")
+    public String  getServerPort1(@PathVariable("id") Long id) {
+        return serverPort;
+    }
+
+    @GetMapping("/payment/lb/{id}")
+    public String  getServerPort2(@PathVariable("id") Long id) {
+        return serverPort;
+    }
+
     @GetMapping("/payment/{id}")
     public CommonResult<Payment> selectOne(@PathVariable("id") Long id) {
         Payment payment = paymentService.queryById(id);
